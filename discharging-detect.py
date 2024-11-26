@@ -25,7 +25,8 @@ CONFIG_OPTIONS = DMConfigOptions(
 
 # Create the DeviceManager, turning on verbosity and passing in some specific configuration values.
 with DeviceManager(
-    verbose=True,  # optional argument
+    # verbose=True,  # optional argument
+    verbose=False,
     config_options=CONFIG_OPTIONS,  # optional argument
 ) as device_manager:
     # Explicitly specify to use the system VISA backend, this is the default,
@@ -158,7 +159,7 @@ with DeviceManager(
                 if load_flag == False:
                     load_start_time = time.time()
                 else:
-                    print(time.time() - load_start_time)
+                    print(int(time.time() - load_start_time))
 
 
 
